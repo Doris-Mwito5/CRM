@@ -1,15 +1,38 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="col-md-6 offset-md-3">
 
 {% if user.is_authenticated %}
 <h1>Customers</h1>
-{% if customers %}
-   {% for customer in customers %}
-   {{ customer }}</br>
-   {% endfor %}
-{% endif %}
-{% else %}
+<table class="table table-primary table-striped table-hover table-bordered border-primary">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Address</th>
+      <th scope="col">City</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% if customers %}
+      {% for customer in customers %}
+      <tr>
+      <td>{{ customer.id }}</td>
+      <td>{{ customer.first_name }}
+      {{ customer.last_name }}</td>  
+      <td>{{ customer.email}}</td>
+      <td>{{ customer.phone }}</td>
+      <td>{{ customer.address }}</td>
+      <td>{{ customer.city }}</td>
+      </tr>
+     </br>
+      {% endfor %}
+   {% endif %}
+   {% else %}
+  </tbody>
+</table>
+
 <h1>Login</h1>
 </br>
 <form method="POST">
@@ -23,7 +46,5 @@
 </br>
     <button type="submit" class="btn btn-primary">Login</button>
   </form>
-  
-</div>
 {% endif %}
 {% endblock  %}
