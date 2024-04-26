@@ -3,7 +3,12 @@
 <div class="col-md-6 offset-md-3">
 
 {% if user.is_authenticated %}
-<h1>Hello!</h1>
+<h1>Customers</h1>
+{% if customers %}
+   {% for customer in customers %}
+   {{ customer }}</br>
+   {% endfor %}
+{% endif %}
 {% else %}
 <h1>Login</h1>
 </br>
