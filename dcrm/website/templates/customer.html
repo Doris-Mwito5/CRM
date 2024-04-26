@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-
 <h1>Customer Records:</h2>
     <div class="card">
         <div class="card-header">
@@ -8,7 +7,6 @@
             {{ customer_record.last_name }}</strong>
         </div>
         <div class="card-body">
-       
           <p class="card-text"><strong>ID: </strong>{{ customer_record.id }}</p>
           <p class="card-text"><strong>Email: </strong>{{ customer_record.email }}</p>
           <p class="card-text"><strong>Phone: </strong>{{ customer_record.phone }}</p>
@@ -19,4 +17,5 @@
     </br>
    <a href="{% url 'home' %}" class="btn btn-primary">Back</a>
    <a href="{% url 'delete_record' customer_record.id %}" class="btn btn-danger">Delete</a>
-{% endblock %}
+   <a href="{% url 'update_record' customer_record.id %}" class="btn btn-primary">Update Record</a>
+   {% endblock %}
