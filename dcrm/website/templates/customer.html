@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>Custome Records:</h2>
+<h1>Customer Records:</h2>
     <div class="card">
         <div class="card-header">
           <strong>{{ customer_record.first_name }}
@@ -18,5 +18,5 @@
       </div>
     </br>
    <a href="{% url 'home' %}" class="btn btn-primary">Back</a>
-   <a href="{% url 'home' %}" class="btn btn-danger">Delete</a>
+   <a href="{% url 'delete_record' customer_record.id %}" class="btn btn-danger">Delete</a>
 {% endblock %}
