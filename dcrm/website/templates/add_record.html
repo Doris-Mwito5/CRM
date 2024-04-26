@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<h1>Add Records</h2>
+</br>
+<form method="POST" action={% url 'add_record' %} class="mt-5 col-6">
+    {% csrf_token %}
+
+    {{ form|crispy }}
+    <button class="btn btn-primary mb-5" type="submit">Add Record</button>  
+  </form>
+{% endblock %}

@@ -22,15 +22,19 @@
               <a class="nav-link" href="#">Features</a>
               {% if user.is_authenticated %}
               <div class="d-flex">
+                <a href="{% url 'add_record' %}">
+                  <button class="btn bg-info text-white me-3" type="button">Add Record</button>
+              </a>
+              
                 <a href="{% url 'logout' %}">
-                  <button class="btn bg-info text-dark" type="submit">Logout</button>
+                  <button class="btn bg-info text-white me-3" type="submit">Logout</button>
                 </a>   
                 {% else %}
                 <a href="{% url 'home' %}">
-                  <button class="btn bg-success text-white me-2" type="submit">Login</button>
+                  <button class="btn bg-info text-white me-3" type="submit">Login</button>
                 </a>   
                 <a href="{% url 'register' %}">
-                  <button class="btn bg-success text-white me-2" type="submit">Register</button>
+                  <button class="btn bg-info text-white me-3" type="submit">Register</button>
                 </a>
               </div>
             
